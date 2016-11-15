@@ -19,9 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $name = test_input($_POST["name"]);
     // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-      $nameErr = "Only letters and white space allowed"; 
-    }
+   // if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+     // $nameErr = "Only letters and white space allowed"; 
+    //}
   }
 
   if (empty($_POST["address"])) {
@@ -29,9 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $address = test_input($_POST["address"]);
     // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z0-9,. ]*$/", $address)) {
-      $addressErr = "Only letters and white space allowed"; 
-    }
+   // if (!preg_match("/^[a-zA-Z0-9,. ]*$/", $address)) {
+     // $addressErr = "Only letters and white space allowed"; 
+    //}
   }
 
   if (empty($nameErr) and empty($addressErr)) {
