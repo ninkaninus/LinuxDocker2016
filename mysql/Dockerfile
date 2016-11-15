@@ -27,3 +27,7 @@ RUN /etc/init.d/mysql start &\
 	CREATE USER 'ubuntu' IDENTIFIED BY 'ubuntu';\
 	GRANT SELECT, INSERT, UPDATE, DELETE ON addressbook TO 'ubuntu';"\
  	| mysql
+
+
+#Set the ip of the only allowed connection
+RUN   sed -i "s|bind-address		= 127.0.0.1|bind-address		= 172.17.0.2|g" /etc/mysql/mariadb.conf.d/50-server.cnf
