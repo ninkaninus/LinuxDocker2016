@@ -1,7 +1,7 @@
-################################################################
-# Dockerfile to build mariaDB container images for ROB5 Linux 2
-# Based on ubuntu
-################################################################
+#################################################################
+# Dockerfile to build mariaDB container images for ROB5 Linux 2 #
+# Based on ubuntu						#
+#################################################################
 
 #Set the base image to Ubuntu
 From ubuntu
@@ -15,7 +15,7 @@ RUN apt-get upgrade -y
 
 #Install MariaDB
 RUN apt-get install mariadb-server -y
-RUN /etc/init.d/mysql start &\
+RUN /etc/init.d/mysql start &&\
 	sleep 10s &&\
 	echo "CREATE DATABASE abookdb;\
 	USE abookdb;\
